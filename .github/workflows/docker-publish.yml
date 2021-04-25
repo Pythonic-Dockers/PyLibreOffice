@@ -13,7 +13,7 @@ jobs:
         run: docker login -u "${{ secrets.DOCKER_USER }}" -p "${{ secrets.DOCKER_PASSWORD }}"
       - name: Build & push
         env:
-          CONTAINER_IMAGE: ${{ secrets.DOCKER_USER }}/py-libreoffice:6.4.7.2-python3.8.5
+          CONTAINER_IMAGE: ${{ secrets.DOCKER_USER }}/py-libre-office:6.4.7.2-python3.8.5
         run: |
           docker build -t $CONTAINER_IMAGE .
           docker push $CONTAINER_IMAGE
